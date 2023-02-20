@@ -1,6 +1,7 @@
 // IMPORTACIONES
 import {Client, GatewayIntentBits, Partials} from "discord.js";
 import * as dotenv from "dotenv";
+import loader from "./handlers/point";
 
 dotenv.config();
 
@@ -20,4 +21,6 @@ const client = new Client({
     ],
 });
 
-client.login(process.env.TOKEN);
+loader();
+
+// client.login(process.env.TOKEN);
