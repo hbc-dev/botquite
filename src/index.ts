@@ -1,12 +1,13 @@
 // IMPORTACIONES
-import {Client, GatewayIntentBits, Partials} from "discord.js";
+import DiscordClient from '../src/structures/DiscordClient';
+import {GatewayIntentBits, Partials} from "discord.js";
 import * as dotenv from "dotenv";
 import loader from "./handlers/point";
 
 dotenv.config();
 
 // CÓDIGO
-const client = new Client({
+const client = new DiscordClient({
     intents: [
         GatewayIntentBits.DirectMessages,
         GatewayIntentBits.GuildMembers,
@@ -21,6 +22,4 @@ const client = new Client({
     ],
 });
 
-loader();
-
-// client.login(process.env.TOKEN);
+loader(client);

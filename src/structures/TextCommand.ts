@@ -1,5 +1,8 @@
 class TextCommand {
-    constructor() {
-        console.log('Hola mundo')
+    constructor(options: any) {
+        console.log('Hola mundo');
     }
+
 }
+
+export default TextCommand;
